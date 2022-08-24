@@ -8,12 +8,12 @@ class CustomObject(JSONTypeHelper):
     properties: PropertiesList
 
     @classproperty
-    def type_dict(cls) -> dict:
-        return cls.properties.to_dict()
+    def type_dict(self) -> dict:
+        return self.properties.to_dict()
 
     @classproperty
-    def schema(cls) -> dict:
-        return cls.type_dict
+    def schema(self) -> dict:
+        return self.type_dict
 
     @classmethod
     def extend_with(cls, *extras: "CustomObject") -> "CustomObject":
